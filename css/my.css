@@ -1,0 +1,307 @@
+@charset='utf-8';
+/*DOCTYPE CSS*/
+*{margin:0;padding:0;box-sizing: border-box;}
+.lf{float:left;}
+.rf{float:right;}
+li{list-style: none;}
+a{text-decoration:none;}
+
+.topLayer{z-index:1000;}
+body{
+	width:100vw;
+	height:100vh;
+	overflow:hidden;
+	/*perspective-origin:0px 0px 0px;景深摄像头的位置*/
+ 	 perspective:800px;/*景深 */
+}
+.main{
+	width:1000px;
+	height:100vh;
+	position:relative;
+	transform-style: preserve-3d;
+	transition:3s;
+	margin:0 auto;
+  }
+
+/* .main:hover{
+	transition:3s;
+	transform: rotateY(360deg);
+	transform:matrix(2,0,0,2,0,0) ;矩阵
+
+}  */
+.main div{
+	position:absolute;
+	left:0px;
+	top:0px;
+	background-size:100% 100%;
+	background-image:no-repeat; 
+	/*  transform-origin: 0px 0px 0px;  */
+}
+
+.frontPlan{
+	width:1000px;
+	height:100px;
+     border:1px solid white;
+     background: rgba(0,255,0,.5);
+     transform: translateZ(-500px);
+     font-size:50px;
+     color:#f0f;
+     text-align:center;
+     display:none;
+     font-weight: bold;
+     font-family:"楷体";
+  }
+
+.afterPlan{
+	width:1000px;
+	height:600px;
+	background: url("../images/a.jpg");
+	transform: translateZ(-780px) ;
+	
+	 -webkit-transform: translateZ(-780px) translateY(0px);
+	 -ms-transform: translateZ(-780px) translateY(0px);
+	/* -webkit-transform:translateX(-10px); */
+}
+.leftPlan{
+	backface-visibility:hidden;/*从背面可透视*/
+	float:left;
+	width:1000px;
+	height:600px;
+	background: url("../images/l3.jpg");
+	transform: rotateY(90deg) translateX(280px) translateZ(-500px);
+}
+/* .leftPlan:hover{
+	transition:3s;
+transform: rotateY(0deg) translateX(0px) translateZ(0px);
+} */
+.leftPlan img{
+	width:200px;
+	height:150px;
+	border:2px solid gold;
+	margin-top:50px;
+	margin-left:30px;
+}
+.rightPlan img{
+	width:200px;
+	height:150px;
+	border:2px solid gold;
+	margin-top:50px;
+	margin-left:30px;
+} 
+img:hover{
+	cursor:pointer;
+}
+.rightPlan{
+	backface-visibility:hidden;
+	width:1000px;
+	height:600px;
+	background:url("../images/l3.jpg");
+	transform: rotateY(-90deg)  translateX(-280px) translateZ(-500px);
+}
+
+.topPlan{
+    width:1000px;
+	height:1000px;
+	background: url("../images/tp.jpg");
+	transform: rotateX(-90deg) translateY(280px) translateZ(-500px);
+}
+.bottomPlan{
+	width:1000px;
+	height:1000px;
+	background: url("../images/l2.jpg");
+	transform: rotateX(90deg) translateY(-280px) translateZ(-100px);
+/* 	-webkit-box-reflect:below 3px -webkit-linear-gradient(top,rgba(0,0,0,0) 40%,rgba(0,0,0,0.5));倒影  */	
+	/* background:-webkit-radial-gradient(center center,600px 600px,rgba(158,158,222,0.5),rgba(0,0,0,0)); */
+}
+
+/*afterPlan开始*/
+.main .afterPlan ul{
+  width: 100%;
+  height: 100%;
+}
+.main .afterPlan ul li{
+	transition: 3s;
+	position: absolute;
+	top:0px;
+	left:0px;
+	right:0px;
+	bottom:0px;
+	width:50px;
+	height:400px;
+	margin:auto;
+	transform-origin:50% 350px 0;
+
+}
+.main .afterPlan ul li .s-head{
+	float:left;
+	border-radius: 0px 0px 20px 20px;
+    width:50px;
+    height:250px;
+	background: url(../imgs/456.png); 
+	/* background-size:100% 100%; */
+    box-shadow:8px 2px 5px yellow;
+    writing-mode: vertical-lr;/*文字竖排*/
+    font-size:40px;
+    vertical-align:center;
+   padding:5px;
+}
+
+.main .afterPlan ul li:hover .s-head{
+	 z-index:3000;
+	box-shadow:-10px -100px 50px yellow;
+    transform:matrix(1.5,0,0,1.5,0,0);	
+    color:#fff;
+    font-weight:bold;
+    cursor:pointer;
+
+}
+.main .afterPlan ul li:hover .s-touMin{
+	box-shadow:-10px -100px 50px yellow;
+}
+.main .afterPlan ul li:hover .s-foot{
+	box-shadow:10px 100px 50px yellow;
+}
+
+.main .afterPlan ul li .s-touMin{
+	float:left;
+    width:50px;
+    height:50px;
+    box-shadow:2px 2px 20px cyan;
+    background: rgba(0,255,0,.3);
+}
+.main .afterPlan ul li .s-foot{
+	float:left;
+    width:20px;
+    height:100px;
+    background: blue;
+    margin-left:15px;
+    border-radius: 0px 0px 20px 20px;
+    background: url(../imgs/123.png); 
+    box-shadow:2px 2px 20px blue;
+}
+.main .afterPlan:hover .openS li:nth-child(1){
+transform:rotateZ(80deg);
+}
+.main .afterPlan:hover .openS li:nth-child(2){
+  transform:rotateZ(70deg);
+}
+.main .afterPlan:hover .openS li:nth-child(3){
+    transform:rotateZ(60deg);
+}
+.main .afterPlan:hover .openS li:nth-child(4){
+  transform:rotateZ(50deg);
+}
+.main .afterPlan:hover .openS li:nth-child(5){
+transform:rotateZ(40deg);
+}
+.main .afterPlan:hover .openS li:nth-child(6){
+transform:rotateZ(30deg);
+}
+.main .afterPlan:hover .openS li:nth-child(7){
+transform:rotateZ(20deg);
+}
+.main .afterPlan:hover .openS li:nth-child(8){
+transform:rotateZ(10deg);
+}
+.main .afterPlan:hover .openS li:nth-child(9){
+transform:rotateZ(0deg);
+}
+.main .afterPlan:hover .openS li:nth-child(10){
+transform:rotateZ(-10deg);
+}
+.main .afterPlan:hover .openS li:nth-child(11){
+transform:rotateZ(-20deg);
+}
+.main .afterPlan:hover .openS li:nth-child(12){
+transform:rotateZ(-30deg);
+}
+.main .afterPlan:hover .openS li:nth-child(13){
+transform:rotateZ(-40deg);
+}
+.main .afterPlan:hover .openS li:nth-child(14){
+transform:rotateZ(-50deg);
+}
+.main .afterPlan:hover .openS li:nth-child(15){
+transform:rotateZ(-60deg);
+}
+.main .afterPlan:hover .openS li:nth-child(16){
+transform:rotateZ(-70deg);
+}
+.main .afterPlan:hover .openS li:nth-child(17){
+transform:rotateZ(-80deg);
+}
+main .afterPlan .openS li:hover{
+	z-index:-100000;
+}
+
+/* topPlan开始 */
+.main .topPlan ul{
+	width:50%;
+	height:100%;
+	border:2px solid yellow;
+}
+.main .topPlan ul li{
+  width:100px;
+  height:100px;
+  background: white;
+  margin-top:100px;
+  border:5px solid #fff;
+  box-shadow:5px 5px 50px #fff;
+}
+/* .main .afterPlan:hover .topPlan ul li{
+	
+} */
+.main .topPlan .ul_L li{
+  margin-left:100px;
+}
+.main .topPlan .ul_R li{
+  margin-left:300px;
+  background:#fff;
+}
+/*方向样式*/
+.main .L_Go{
+	position: absolute;
+	left:0px;
+	bottom:30px;
+    width:100px;
+    height:30px;
+    background: rgba(0,255,0,0.6);
+	color:red;
+	line-height:30px;
+	text-align:center;
+	font-size:25px;
+	/* transform:translateZ(-600px); */
+}
+.main .L_Go:hover{
+	font-weight: bold;
+	color:white;
+	background:red;
+}
+.main .R_Go{
+	position: absolute;
+	right:0px;
+	bottom:30px;
+	width:100px;
+	height:30px;
+	background:rgba(0,255,0,0.6);
+  }
+  .bottomPlan .F_Go{
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;  
+	width:100px;
+	height:300px;
+	background: red;
+	margin:auto;
+	font-size:50px;
+	color:yellow;
+	padding:20px;
+	writing-mode: vertical-lr;/*文字竖排*/
+	border-radius: 50%;
+  }
+  .bgCss{background:#000;}/*需放最后*/
+  .afterAddCss{
+	    background: url("../images/a.jpg");
+  }
