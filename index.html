@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>我的展厅</title>
+    <link rel="shortcut Icon" href="images/logo.png">
     <link rel="stylesheet" type="text/css" href="css/my.css">
     <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
    
@@ -150,8 +151,7 @@
 </html>
  <script type="text/javascript" src="js/mainPage.js"></script>
 <script>
-   var audio = document.createElement('audio');
-       audio.src = './audio/sinian.wav';
-        audio.style.autoplay='autoplay';
-        document.body.append(audio)
+ var oAudio = document.createElement('audio');
+       oAudio.src = 'audio/sinian.wav';
+        oAudio.play();
 </script>

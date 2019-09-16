@@ -1,7 +1,7 @@
 $(document).ready(function(){
-    var audio = document.createElement('audio');
-        audio.src = '../audio/you.wav';
-        audio.style.autoplay='autoplay';
+    // var audio = document.createElement('audio');
+    //     audio.src = '../audio/you.wav';
+    //     audio.style.autoplay='autoplay';
 
 $('.LeftImg_1').mouseover(function(){
 	$(this).attr({title:"可点击"});
@@ -119,5 +119,5 @@ $(".F_Go").click(function(){
     background: 'url("./images/l3.jpg")',
     transform: 'rotateY(90deg) translateX(280px) translateZ(-500px+j)'
     })
-}) 
+ }) 
 })
